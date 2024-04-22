@@ -48,22 +48,13 @@ void read_file(string Name_file , vector <student> &ListOFStudent){
 //<!------------------ Insertion Sort ---------------------------------!>
 template<class T>
 void  insertion_sort( vector<T>&array, int n, bool flag) {
-    if(flag) {
         for (int i = 1, j; i < n; ++i) {
             student t;
             t = array[i];;
-            for (j = i; j > 0 && t.name < array[j - 1].name; j--) array[j] = array[j - 1];
-            array[j] = t;
-        }
-    }else{
-        for (int i = 1, j; i < n; ++i) {
-            student t;
-            t = array[i];;
-            for (j = i; j > 0 && t.gba < array[j - 1].gba; j--) array[j] = array[j - 1];
+            for (j = i; j > 0 &&( flag ?t.gba < array[j - 1].gba : t.name < array[j - 1].name) ; j--) array[j] = array[j - 1];
             array[j] = t;
         }
     }
-}
 
 
 //<!------------------ Bubbel Sort ---------------------------------!>
