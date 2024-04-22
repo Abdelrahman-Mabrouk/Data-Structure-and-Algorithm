@@ -16,6 +16,8 @@ public:
         else return false;
     }
 }
+
+//<!------------------ Insertion Sort ---------------------------------!>
 template<class T>
 void  insertion_sort(T  array[],int n) {
     for (int i = 1, j; i < n; ++i) {
@@ -24,6 +26,8 @@ void  insertion_sort(T  array[],int n) {
         array[j] = t;
     }
 }
+
+//<!------------------ Bubbel Sort ---------------------------------!>
 template <class T>
 void  Bubble_sort(T  array[],int n) {
     for (int i = 0, j; i < n-1; ++i) {
