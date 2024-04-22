@@ -15,7 +15,8 @@ public:
         if(name<x.name)return true;
         else return false;
     }
-void  insertion_sort(int  array[],int n) {
+template<class T>
+void  insertion_sort(T  array[],int n) {
     for (int i = 1, j; i < n; ++i) {
         int t = array[i];
         for (j = i; j > 0 && t < array[j - 1]; j--) array[j] = array[j - 1];
