@@ -1,3 +1,4 @@
+شكلي كد هخلي كله ماب
 #include <iostream>
 #include <string>
 using namespace std;
@@ -118,22 +119,24 @@ void Merge_sort(T array[],int left ,int right) {
 
 //<!------------------ Count Sort ---------------------------------!>
 template <class T>
-void Count_sort(T array[],int n){
-    T temp[5]={0};
+void Count_sort( vector<T> &array,int n,int flag){
+    int temp[5]={0};
     T a[n];
     for (int i = 0; i <n ; ++i) {
-        temp[array[i]]++;
+        temp[int(array[i].gba)]++;
+        a[i]=array[i];
     }
     for (int i = 1; i < 5; ++i) {
         temp[i]=temp[i]+temp[i-1];
     }
     for (int i = n-1; i >= 0; --i) {
-        a[--temp[array[i]]]=array[i];
+        a[--temp[int(array[i].gba)]].gba=(array[i].gba);
     }
+
     for (int i = 0; i < n; ++i) {
         array[i]=a[i];
     }
-
+cout<<endl;
 }
 
 int main() {
