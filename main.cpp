@@ -47,14 +47,24 @@ void read_file(string Name_file , vector <student> &ListOFStudent){
 
 //<!------------------ Insertion Sort ---------------------------------!>
 template<class T>
-void  insertion_sort( vector<T>&array, int n) {
-    for (int i = 1, j; i < n; ++i) {
-        student t ;
-        t= array[i];;
-        for (j = i; j > 0 && t.gba < array[j - 1].gba; j--) array[j] = array[j - 1];
-        array[j] = t;
+void  insertion_sort( vector<T>&array, int n, bool flag) {
+    if(flag) {
+        for (int i = 1, j; i < n; ++i) {
+            student t;
+            t = array[i];;
+            for (j = i; j > 0 && t.name < array[j - 1].name; j--) array[j] = array[j - 1];
+            array[j] = t;
+        }
+    }else{
+        for (int i = 1, j; i < n; ++i) {
+            student t;
+            t = array[i];;
+            for (j = i; j > 0 && t.gba < array[j - 1].gba; j--) array[j] = array[j - 1];
+            array[j] = t;
+        }
     }
 }
+
 
 //<!------------------ Bubbel Sort ---------------------------------!>
 template <class T>
@@ -131,17 +141,15 @@ void Count_sort(T array[],int n){
 }
 
 int main() {
-   int  a[]={1,5,3,6,8,2,4};
-   vector <student> ListOFStudent;
+      vector <student> ListOFStudent;
+      cout<<"DO You Want Sorting BY GBA OR NAME?"<<endl;
+      cout<<"if you want GBA enter 0 else enter 1"<<endl;
+      bool flag;
+      cin>>flag;
+    read_file("data_of_student.txt",ListOFStudent,flag);
 
-
-    insertion_sort(a,7);
-    Bubble_sort(a,7);
-    Merge_sort(a,0,6);
-    read_file("data_of_student.txt",ListOFStudent);
-
-    for (int i = 0; i < 7; ++i) {
-        cout<<a[i]<<" ";
+     for (int i = 0; i < ListOFStudent.size(); ++i) {
+        cout<<ListOFStudent[i].name<<" "<<ListOFStudent[i].id<<" "<<ListOFStudent[i].gba<<endl;
     }
     return 0;
 }
