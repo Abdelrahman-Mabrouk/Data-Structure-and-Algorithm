@@ -131,10 +131,13 @@ void Count_sort(T array[],int n){
 
 int main() {
    int  a[]={1,5,3,6,8,2,4};
+   vector <student> ListOFStudent;
+
 
     insertion_sort(a,7);
     Bubble_sort(a,7);
     Merge_sort(a,0,6);
+    read_file("data_of_student.txt",ListOFStudent);
 
     for (int i = 0; i < 7; ++i) {
         cout<<a[i]<<" ";
