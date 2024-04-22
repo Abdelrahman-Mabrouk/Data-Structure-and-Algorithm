@@ -23,12 +23,22 @@ void  insertion_sort(T  array[],int n) {
         array[j] = t;
     }
 }
+template <class T>
+void  Bubble_sort(T  array[],int n) {
+    for (int i = 0, j; i < n-1; ++i) {
+        for (j = 0; j < n - i - 1; j++) {
+            if (array[j] > array[j + 1])swap(array[j], array[j + 1]);
+        }
+    }
+}
 
 };
 int main() {
    int  a[]={1,5,3,6,8,2,4};
 
     insertion_sort(a,7);
+    Bubble_sort(a,7);
+
     for (int i = 0; i < 7; ++i) {
         cout<<a[i]<<" ";
     }
