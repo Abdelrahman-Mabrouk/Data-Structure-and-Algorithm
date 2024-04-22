@@ -47,10 +47,11 @@ void read_file(string Name_file , vector <student> &ListOFStudent){
 
 //<!------------------ Insertion Sort ---------------------------------!>
 template<class T>
-void  insertion_sort(T  array[],int n) {
+void  insertion_sort( vector<T>&array, int n) {
     for (int i = 1, j; i < n; ++i) {
-        int t = array[i];
-        for (j = i; j > 0 && t < array[j - 1]; j--) array[j] = array[j - 1];
+        student t ;
+        t= array[i];;
+        for (j = i; j > 0 && t.gba < array[j - 1].gba; j--) array[j] = array[j - 1];
         array[j] = t;
     }
 }
