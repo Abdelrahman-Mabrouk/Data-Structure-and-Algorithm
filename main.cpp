@@ -37,7 +37,7 @@ void read_file(string Name_file , vector <student> &ListOFStudent){
         }
 
         else if(count==2) {
-            ListOFStudent[i].id = line;
+            ListOFStudent[i].gba = line;
             count++;
         }
 
