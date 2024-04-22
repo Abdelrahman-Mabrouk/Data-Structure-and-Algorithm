@@ -37,12 +37,57 @@ void  Bubble_sort(T  array[],int n) {
     }
 }
 
+//<!------------------ Merge Sort ---------------------------------!>
+template <class T>
+void merge(T array[],int left,int mid,int right) {
+    int SizeOFRight =  right-mid;
+    int SizeOFLeft = mid-left+1;
+    T *leftArray = new T[SizeOFLeft], *rightArray = new T[SizeOFRight];
+    for (int i = 0; i < SizeOFLeft; ++i) {
+        leftArray[i] = array[left + i];
+    }
+    for (int i = 0; i < SizeOFRight; ++i) {
+        rightArray[i] = array[mid + i + 1];
+    }
+    int l = 0, r = 0;
+    int k = left;
+    while (l < SizeOFLeft && r < SizeOFRight) {
+        if (leftArray[l] <= rightArray[r]) {
+            array[k] = leftArray[l];
+            l++;
+        } else {
+            array[k] = rightArray[r];
+            r++;
+        }
+        k++;
+    }
+    while (l < SizeOFLeft) {
+        array[k] = leftArray[l];
+        l++, k++;
+    }
+    while (r < SizeOFRight) {
+        array[k] = rightArray[r];
+        r++, k++;
+    }
+
+}
+template <class T>
+void Merge_sort(T array[],int left ,int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+        Merge_sort(array, left, mid);
+        Merge_sort(array, mid + 1, right);
+        merge(array, left, mid, right);
+    }
+}
+
 };
 int main() {
    int  a[]={1,5,3,6,8,2,4};
 
     insertion_sort(a,7);
     Bubble_sort(a,7);
+    Merge_sort(a,0,6);
 
     for (int i = 0; i < 7; ++i) {
         cout<<a[i]<<" ";
