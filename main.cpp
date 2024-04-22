@@ -59,13 +59,18 @@ void  insertion_sort( vector<T>&array, int n, bool flag) {
 
 //<!------------------ Bubbel Sort ---------------------------------!>
 template <class T>
-void  Bubble_sort(T  array[],int n) {
-    for (int i = 0, j; i < n-1; ++i) {
-        for (j = 0; j < n - i - 1; j++) {
-            if (array[j] > array[j + 1])swap(array[j], array[j + 1]);
+void  Bubble_sort(vector<T>&array,int n,bool flag) {
+        for (int i = 0, j; i < n - 1; ++i) {
+            for (j = 0; j < n - i - 1; j++) {
+                if (flag) {
+                    if (array[j].name > array[j + 1].name)swap(array[j], array[j + 1]);
+                } else {
+                    if (array[j].gba > array[j + 1].gba)swap(array[j], array[j + 1]);
+                }
+            }
         }
     }
-}
+
 
 //<!------------------ Merge Sort ---------------------------------!>
 template <class T>
