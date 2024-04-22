@@ -17,6 +17,34 @@ public:
     }
 }
 
+//<!------------------ Get Data From File ---------------------------------!>
+void read_file(string Name_file , vector <student> &ListOFStudent){
+    fstream file(Name_file,ios::in);
+    string line;
+    int NumberOFStudent,i=0,count=0;
+    getline(file,line);
+    NumberOFStudent=line[0]-'0';
+    while (getline(file,line)){
+        student x;
+        if(count==0) {
+            ListOFStudent.push_back(x) ;
+            ListOFStudent[i].name=line;
+            count++;
+        }
+        else if(count==1) {
+            ListOFStudent[i].id = line;
+            count++;
+        }
+
+        else if(count==2) {
+            ListOFStudent[i].id = line;
+            count++;
+        }
+
+        if(count==3)count=0,i++;
+    }
+}
+
 //<!------------------ Insertion Sort ---------------------------------!>
 template<class T>
 void  insertion_sort(T  array[],int n) {
