@@ -15,6 +15,7 @@ public:
         if(name<x.name)return true;
         else return false;
     }
+}
 template<class T>
 void  insertion_sort(T  array[],int n) {
     for (int i = 1, j; i < n; ++i) {
