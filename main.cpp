@@ -75,7 +75,7 @@ void  Bubble_sort(vector<T>&array,int n,bool flag) {
 
 //<!------------------ Merge Sort ---------------------------------!>
 template <class T>
-void merge(T array[],int left,int mid,int right) {
+void merge(T array[],int left,int mid,int right,int flag) {
     int SizeOFRight =  right-mid;
     int SizeOFLeft = mid-left+1;
     T *leftArray = new T[SizeOFLeft], *rightArray = new T[SizeOFRight];
@@ -88,7 +88,7 @@ void merge(T array[],int left,int mid,int right) {
     int l = 0, r = 0;
     int k = left;
     while (l < SizeOFLeft && r < SizeOFRight) {
-        if (leftArray[l] <= rightArray[r]) {
+        if (flag ?(leftArray[l].gba) <= (rightArray[r].gba) : (leftArray[l]) <= (rightArray[r])) {
             array[k] = leftArray[l];
             l++;
         } else {
@@ -106,14 +106,16 @@ void merge(T array[],int left,int mid,int right) {
         r++, k++;
     }
 
+    delete []leftArray;
+    delete []rightArray;
 }
 template <class T>
-void Merge_sort(T array[],int left ,int right) {
+void Merge_sort(T array[],int left ,int right,int flag) {
     if (left < right) {
         int mid = left + (right - left) / 2;
-        Merge_sort(array, left, mid);
-        Merge_sort(array, mid + 1, right);
-        merge(array, left, mid, right);
+        Merge_sort(array, left, mid,flag);
+        Merge_sort(array, mid + 1, right,flag);
+        merge(array, left, mid, right,flag);
     }
 }
 
