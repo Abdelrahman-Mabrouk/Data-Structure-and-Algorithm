@@ -131,7 +131,7 @@ void Count_sort( vector<T> &array,int n,int flag){
         temp[i]=temp[i]+temp[i-1];
     }
     for (int i = n-1; i >= 0; --i) {
-        a[--temp[int(array[i].gba)]].gba=(array[i].gba);
+        a[--temp[int(array[i].gba)]]=(array[i]);
     }
 
     for (int i = 0; i < n; ++i) {
