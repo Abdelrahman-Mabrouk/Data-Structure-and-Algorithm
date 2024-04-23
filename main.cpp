@@ -12,8 +12,8 @@ public:
         this->id=id;
         this->gba=gba;
     }
-    bool operator < (const student & x){
-        if(name<x.name)return true;
+    bool operator <= (const student & x){
+        if(name<=x.name)return true;
         else return false;
     }
 }
