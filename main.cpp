@@ -150,7 +150,17 @@ int main() {
         }
     //    cout<<"DO You Want Sorting BY GBA OR NAME?"<<endl;
     // cout<<"if you want GBA enter 1 else enter 0"<<endl;
-    
+    auto start = std::chrono::high_resolution_clock::now();
+        Count_sort(ListOFStudent,n,);
+
+        // Stop the timer
+        auto stop = std::chrono::high_resolution_clock::now();
+
+        // Calculate the duration
+        auto duration = std::chrono::duration_cast<std::chrono::microseconds >(stop - start);
+
+        // Output the time taken to sort the array
+        std::cout << "Time taken by function: " << duration.count() << " seconds" << std::endl;
       bool flag;
       cin>>flag;
 
