@@ -155,12 +155,12 @@ int main() {
       bool flag;
       cin>>flag;
 
-   //     Merge_sort(ListOFStudent2,0,n-1,flag);
-       /*  for (int i = 0; i <7 ; ++i) {
+   /*     Merge_sort(ListOFStudent2,0,n-1,flag);
+         for (int i = 0; i <7 ; ++i) {
                cout<<a[i]<<" ";
-           }*/
+           }
         for (int i = 0; i < ListOFStudent.size(); ++i) {
         cout<<ListOFStudent2[i].name<<" "<<ListOFStudent2[i].id<<" "<<ListOFStudent2[i].gba<<endl;
-    }
+    }*/
     return 0;
 }
