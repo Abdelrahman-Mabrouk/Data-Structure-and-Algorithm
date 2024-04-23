@@ -142,15 +142,25 @@ cout<<endl;
 }
 
 int main() {
-      vector <student> ListOFStudent;
-      cout<<"DO You Want Sorting BY GBA OR NAME?"<<endl;
-      cout<<"if you want GBA enter 0 else enter 1"<<endl;
+  vector <student> ListOFStudent;
+       // int  a[]={1,5,3,6,8,2,4};
+      int n=  read_file("data_of_student.txt",ListOFStudent);
+        student ListOFStudent2[n];
+        for (int i = 0; i < n; ++i) {
+            ListOFStudent2[i]=ListOFStudent[i];
+        }
+    //    cout<<"DO You Want Sorting BY GBA OR NAME?"<<endl;
+    // cout<<"if you want GBA enter 1 else enter 0"<<endl;
+    
       bool flag;
       cin>>flag;
-    read_file("data_of_student.txt",ListOFStudent,flag);
 
-     for (int i = 0; i < ListOFStudent.size(); ++i) {
-        cout<<ListOFStudent[i].name<<" "<<ListOFStudent[i].id<<" "<<ListOFStudent[i].gba<<endl;
+   //     Merge_sort(ListOFStudent2,0,n-1,flag);
+       /*  for (int i = 0; i <7 ; ++i) {
+               cout<<a[i]<<" ";
+           }*/
+        for (int i = 0; i < ListOFStudent.size(); ++i) {
+        cout<<ListOFStudent2[i].name<<" "<<ListOFStudent2[i].id<<" "<<ListOFStudent2[i].gba<<endl;
     }
     return 0;
 }
