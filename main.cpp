@@ -1,4 +1,3 @@
-شكلي كد هخلي كله ماب
 #include <iostream>
 #include <string>
 using namespace std;
