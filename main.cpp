@@ -1,5 +1,8 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <fstream>
+#include <chrono>
 using namespace std;
 class student {
     string id;
@@ -120,7 +123,7 @@ void Merge_sort(T array[],int left ,int right,int flag) {
 
 //<!------------------ Count Sort ---------------------------------!>
 template <class T>
-void Count_sort( vector<T> &array,int n,int flag){
+void Count_sort( vector<T> &array,int n){
     int temp[5]={0};
     T a[n];
     for (int i = 0; i <n ; ++i) {
@@ -151,7 +154,7 @@ int main() {
     //    cout<<"DO You Want Sorting BY GBA OR NAME?"<<endl;
     // cout<<"if you want GBA enter 1 else enter 0"<<endl;
     auto start = std::chrono::high_resolution_clock::now();
-        Count_sort(ListOFStudent,n,);
+        Count_sort(ListOFStudent,n);
 
         // Stop the timer
         auto stop = std::chrono::high_resolution_clock::now();
